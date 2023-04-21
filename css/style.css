@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;    
+    color: white;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 2ch;
+    padding: 0 1rem;
+}
+
+body h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 3ch;
+    padding: 0rem 2rem;
+}
+
+.background {
+    background-image: url(../images/bg-mobile.svg);
+    background-color: hsl(257, 40%, 49%);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.img-logo {
+    align-self: flex-start;
+    width: 10rem;  
+    padding: 0 1rem;  
+}
+
+.img-mockups {
+    width: 20rem;
+    margin: 2rem 1rem;
+}
+
+.btn-register {
+    all: unset;
+    font-family: 'Open Sans', sans-serif;
+    color: hsl(257, 40%, 49%);
+    background-color: white;
+    margin: 1.5rem 0;
+    height: 2.5rem;
+    width: 200px;
+    border-radius: 200px;
+    text-align: center;
+}
+
+.btn-register:hover,
+.btn-register:active {
+    cursor: pointer;
+    color: white;
+    background-color: hsl(300, 69%, 71%);
+}
+
+.svg-flex-container {
+    
+    margin: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.svg-container {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+}
+
+svg {
+    margin: auto;
+    height: 20px;
+    width: 20px;
+    fill: white;
+}
+
+svg:hover,
+svg:active,
+.svg-container:hover,
+.svg-container:active {
+    cursor: pointer;    
+    fill: hsl(300, 69%, 71%);
+    border-color: hsl(300, 69%, 71%);;
+}
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width: 900px) {
+    .background {
+        background-image: url(../images/bg-desktop.svg);
+        background-size: contain;
+    }
+    main {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:    "logo ."
+                                "mockup register-div"
+                                ". soz-media";     
+        gap: 3rem;                                   
+    }
+
+    .img-logo {
+        justify-self: start; 
+        grid-area: logo;
+    }
+
+    .img-mockups {
+        height: auto;
+        width: 100%;
+        margin: 2rem 1rem;
+        grid-area: mockup;
+    }
+
+    .register-div{
+        grid-area: register-div;
+        text-align: left;
+    }
+
+    .register-div h1 {
+        font-size: xx-large;
+    }
+
+    .register-div p {
+        padding: 0 2rem;
+    }
+
+    .btn-register {
+        margin: 0 2rem;
+    }
+
+    .svg-flex-container {
+        justify-self: end;
+        grid-area: soz-media;
+        margin-bottom: 2rem;
+        margin-right: 3rem;
+    }
+
+}
