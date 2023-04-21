@@ -169,3 +169,12 @@ svg:active,
     }
 
 }
+
+@media (orientation: landscape) and (max-height: 630px){
+    main {
+        height: auto;
+    }
+    .register-div {
+        margin-bottom: 2rem;
+    }
+}
